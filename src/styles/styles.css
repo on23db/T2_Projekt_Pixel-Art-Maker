@@ -7,19 +7,24 @@ body {
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
-    margin: 0;
     align-items: center; /* Vertikal zentrieren */
     min-height: 100vh; /* Mindesthöhe auf die volle Bildschirmhöhe setzen */
     margin: 0; /* Rand entfernen */
-  }
+}
 
 .navigation {
     display: flex;
-    justify-content: flex-end;
-    display: flex;
-    flex-flow: column nowrap;
-  }
+    flex-direction: column;
+    justify-content: space-around; /* Elemente gleichmäßig in der Höhe verteilen */
+    align-items: center;
+    padding: 30px;
+    height: 100%; /* Höhe auf 100% setzen, um den verfügbaren Platz zu nutzen */
+}
 
+.navigation button,
+.navigation input {
+    margin-bottom: 100px; /* Abstand zwischen den Elementen */
+}
 
 .container {
     height: 500px;
