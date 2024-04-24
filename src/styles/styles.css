@@ -1,16 +1,16 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #1e214c;
+    font-family: 'Courier New';
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(116.82deg, rgba(255, 152, 152, 0.7) 0%, rgba(162, 112, 147, 0.585291) 25%, rgba(129, 90, 159, 0.5) 50%, rgba(124, 107, 157, 0.556509) 75%, rgba(124, 216, 205, 0.7) 100%);
     color: white;
     padding: 1%;
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
 }
 
 .container {
-    height: 1000 px;
-    color: white;
-    border: 5px;
-    border-radius: 2px;
-    background-color: beige;
-    width: 800px;
+    height: 500px;
+    border: 5px solid white;
+    background-color: white; /* Hintergrund des Containers weiß setzen */
+    width: 500px;
     border-radius: 3px;
 }
