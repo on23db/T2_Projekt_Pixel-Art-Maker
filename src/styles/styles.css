@@ -26,6 +26,7 @@ body {
     justify-content: space-between; 
     align-items: center;
     background-color: rgba(0, 0, 0, 0.28);
+    width: 900px;
     padding: 65px; /*Möglicherweise noch anpassen!*/
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(20, 20, 20, 0.5); /*Schatten hinzufügen*/
@@ -56,9 +57,28 @@ body {
 }
 
 footer {
+    position: absolute;
+    bottom: -80px;
+    text-align: center;  
     font-size: small;
     font-weight: 400;
-    position: absolute;
+    background-color: rgba(0, 0, 0, 0.28);
+    box-shadow: 0 10px 20px rgba(20, 20, 20, 0.5);
+    border-radius: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+footer ul {
+    list-style-type:none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     bottom: 0;
-    text-align: center;
+    width: 990px;
+}
+
+footer ul li {
+    flex-basis: 33.33%;
 }
