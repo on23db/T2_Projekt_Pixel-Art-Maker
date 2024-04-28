@@ -58,7 +58,7 @@ body {
 
 footer {
     position: absolute;
-    bottom: -80px;
+    bottom: -50px;
     text-align: center;  
     font-size: small;
     font-weight: 400;
@@ -73,12 +73,8 @@ footer ul {
     list-style-type:none;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around; /* Liste auf die breite der Box verteilen */
     align-items: center;
     bottom: 0;
     width: 990px;
-}
-
-footer ul li {
-    flex-basis: 33.33%;
 }
