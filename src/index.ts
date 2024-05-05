@@ -10,9 +10,18 @@ import { PixelGrid } from './dom-utils';
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.container') as HTMLElement;
   const sizeEl = document.querySelector('.size') as HTMLInputElement;
-  const resetButton = document.querySelector('.btn') as HTMLButtonElement;
+  const resetButton = document.querySelector('.button') as HTMLButtonElement;
 
   let size = parseInt(sizeEl.value);
 
   PixelGrid(container, size);
+});
+
+import { Drawing } from './dom-utils';
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.container') as HTMLElement;
+    const color = document.querySelector('.color') as HTMLInputElement;
+    const drawState = { draw: false };
+
+  Drawing(container, color, drawState);
 });

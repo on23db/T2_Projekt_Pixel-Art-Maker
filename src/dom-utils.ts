@@ -8,3 +8,23 @@ export function PixelGrid(container: HTMLElement, size: number): void {
       container.appendChild(div);
     }
   }
+
+//Zeichnet auf die Pixel
+export function Drawing(container: HTMLElement, color: HTMLInputElement, drawState: {draw: boolean}): void {
+    container.addEventListener('mouseover', (event) => {
+      if (drawState.draw) {
+        const target = event.target as HTMLElement;
+        if (target && target.classList.contains('pixel')) {
+          target.style.backgroundColor = color.value;
+        }
+      }
+    });
+  
+    container.addEventListener('mousedown', () => {
+      drawState.draw = true;
+    });
+  
+    window.addEventListener('mouseup', () => {
+      drawState.draw = false;
+    });
+  }
