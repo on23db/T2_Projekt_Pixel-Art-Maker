@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pixel Art Maker</title>
     <link rel="icon" type="image/x-icon" href="Logo.png">
-    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link zum externen CSS-Datei -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://kit.fontawesome.com/95fd394dd0.js" crossorigin="anonymous"></script>
     <script defer type="module" src="/src/index.ts"></script>
 </head>
 <body>
@@ -14,7 +15,9 @@
           <h1>Pixel Art Maker</h1>
             <input type="color" value="#ffffff" class="color">
             <input type="number" value="30" class="size">
-            <button class="button">Reset</button>
+            <button class="pen"><i class="fa fa-pen" aria-hidden="true"></i></button>
+            <button class="erase"><i class="fa fa-eraser" aria-hidden="true"></i></button>
+            <button class="reset">Reset Canvas</button>
         </div>
 
         <div class="container">

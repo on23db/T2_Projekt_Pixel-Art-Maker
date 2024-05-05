@@ -44,24 +44,53 @@ body {
     border-radius: 15px;
 }
 
-.navigation button,.navigation input {
-    margin-bottom: 100px; /* Abstand zwischen den Elementen */
+.navigation button {
+    padding: 10px;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: filter 0.2s; /* Filter-Übergangseffekt */
+}
+
+.navigation button:hover {
+    filter: brightness(80%);
+}
+
+.navigation button:active {
+    filter: brightness(30%);
+}
+
+.reset {
+    background-color: #D16767;
+    color: #ffffff;
+}
+
+.erase {
+    background-color: #D16767;
+    color: #ffffff;
+}
+
+.pen {
+    background-color: #8EC2BC;
+    color: #ffffff;
 }
 
 .container {
     height: 500px;
     width: 500px;
-    background-color: #1A1A1A; 
+    background-color: #2B2B2B; 
     border-radius: 15px;
     display: grid;
     grid-template-columns: repeat(var(--size), 1fr);
     grid-template-rows: repeat(var(--size), 1fr);
-    gap: 2px;
+    gap: 1.5px;
     padding: 15px;
 }
  /*CSS für die Pixel - deklariert in dom-utils*/
 .pixel{
-    background-color: rgb(61, 61, 61);
+    background-color: #1A1A1A;
 }
 
 footer {
