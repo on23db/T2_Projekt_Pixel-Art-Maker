@@ -1,15 +1,35 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    
+}
+
 body {
-    font-family: 'Courier New';
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(116.82deg, rgba(255, 152, 152, 0.7) 0%, rgba(162, 112, 147, 0.585291) 25%, rgba(129, 90, 159, 0.5) 50%, rgba(124, 107, 157, 0.556509) 75%, rgba(124, 216, 205, 0.7) 100%);
+    background: 
+        /* Vordergrund-Layer */
+        linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        /* Hintergrund-Gradient */
+        linear-gradient(116.82deg, #FF9898 , #A17093, #815A9F, #7C6B9D, #7CD8CD);
     color: white;
     padding: 1%;
     background-size: 100% 120%;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
-    align-items: center; /* Vertikal zentrieren */
+    align-items: center; 
     min-height: 100vh; /* Mindesthöhe auf die volle Bildschirmhöhe setzen */
     margin: 0; /* Rand entfernen */
+}
+
+.background {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.28);
+    width: 900px;
+    padding: 65px; /*Möglicherweise noch anpassen!*/
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(20, 20, 20, 0.5); /*Schatten hinzufügen*/
 }
 
 .navigation {
@@ -17,19 +37,52 @@ body {
     flex-direction: column;
     justify-content: space-around; /* Elemente gleichmäßig in der Höhe verteilen */
     align-items: center;
-    padding: 30px;
+    padding: 20px;
     height: 100%; /* Höhe auf 100% setzen, um den verfügbaren Platz zu nutzen */
+    width: 30%;
+    background-color: #2B2B2B;
+    border-radius: 15px;
 }
 
-.navigation button,
-.navigation input {
+.navigation button,.navigation input {
     margin-bottom: 100px; /* Abstand zwischen den Elementen */
 }
 
 .container {
     height: 500px;
-    border: 5px solid white;
-    background-color: white; /* Hintergrund des Containers weiß setzen */
     width: 500px;
-    border-radius: 3px;
+    background-color: #1A1A1A; 
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(var(--size), 1fr);
+    grid-template-rows: repeat(var(--size), 1fr);
+    gap: 2px;
+    padding: 15px;
+}
+ /*CSS für die Pixel - deklariert in dom-utils*/
+.pixel{
+    background-color: rgb(61, 61, 61);
+}
+
+footer {
+    position: absolute;
+    bottom: -50px;
+    text-align: center;  
+    font-size: small;
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.28);
+    box-shadow: 0 10px 20px rgba(20, 20, 20, 0.5);
+    border-radius: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+footer ul {
+    list-style-type:none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* Liste auf die breite der Box verteilen */
+    align-items: center;
+    bottom: 0;
+    width: 990px;
 }
