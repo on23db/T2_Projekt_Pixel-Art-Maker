@@ -1,7 +1,6 @@
 * {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 900;
-    
 }
 
 body {
@@ -27,30 +26,38 @@ h1 {
 
 .background {
     display: flex; 
-    justify-content: space-between; 
+    justify-content: space-around; 
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.28);
-    width: 900px;
-    padding: 65px; /*Möglicherweise noch anpassen!*/
+    background-color: rgba(0, 0, 0, 0.346);
+    width: 65%;
+    padding: 20px; /*Möglicherweise noch anpassen!*/
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(20, 20, 20, 0.5); /*Schatten hinzufügen*/
+}
+
+.size {
+    width: 150px;
+    height: 20px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .navigation {
     display: flex;
     flex-direction: column;
-    justify-content: space-around; /* Elemente gleichmäßig in der Höhe verteilen */
+    justify-content: space-evenly; /* Elemente gleichmäßig in der Höhe verteilen */
     align-items: center;
-    padding: 20px;
-    height: 100%; /* Höhe auf 100% setzen, um den verfügbaren Platz zu nutzen */
-    width: 30%;
+    padding: 0 10px 0px 10px;
+    height: 650px; 
+    width: 200px;
     background-color: #2B2B2B;
     border-radius: 15px;
 }
 
 .navigation button {
     padding: 10px;
-    margin: 20px;
+    margin: 5px;
     border: none;
     border-radius: 5px;
     font-weight: 900;
@@ -69,6 +76,7 @@ h1 {
 .reset {
     background-color: #D16767;
     color: #ffffff;
+    width: 150px;
 }
 
 .erase {
@@ -86,15 +94,15 @@ h1 {
 }
 
 .container {
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 600px;
     background-color: #2B2B2B; 
     border-radius: 15px;
     display: grid;
     grid-template-columns: repeat(var(--size), 1fr);
     grid-template-rows: repeat(var(--size), 1fr);
     gap: 1.5px;
-    padding: 15px;
+    padding: 20px;
 }
  /*CSS für die Pixel - deklariert in dom-utils*/
 .pixel{
@@ -103,7 +111,7 @@ h1 {
 
 footer {
     position: absolute;
-    bottom: -50px;
+    bottom: -150px;
     text-align: center;  
     font-size: small;
     font-weight: 400;
