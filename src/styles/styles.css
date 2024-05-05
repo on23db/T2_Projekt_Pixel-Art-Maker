@@ -21,6 +21,10 @@ body {
     margin: 0; /* Rand entfernen */
 }
 
+h1 {
+    text-align: center;
+}
+
 .background {
     display: flex; 
     justify-content: space-between; 
@@ -70,11 +74,15 @@ body {
 .erase {
     background-color: #D16767;
     color: #ffffff;
+    width: 50px;
+    height: 50px;
 }
 
 .pen {
     background-color: #8EC2BC;
     color: #ffffff;
+    width: 50px;
+    height: 50px;
 }
 
 .container {
