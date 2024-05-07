@@ -1,17 +1,23 @@
-// Erstelle das Raster im Canvas
+// Erstelle das Raster im Canvas mit dunklerem Hintergrund und dunkleren Zwischenräumen
 export function createGrid(canvas: HTMLCanvasElement, size: number): void {
   const context = canvas.getContext('2d');
   const pixelSize = 20; // Größe jedes Pixels im Raster
   
+  // Dunklere Farbe für das Raster
+  const backgroundColor = '#1A1A1A'; // Hintergrundfarbe des Canvas
 
-  // Funktion zum Zeichnen des Rasters
+  // Funktion zum Zeichnen des Rasters und Einfärben der Zwischenräume
   function drawGrid() {
       if (context) {
         context.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
-        context.strokeStyle = '#2B2B2B'; // Setze die Farbe des Rasters
-        context.lineWidth = 1; // Setze die Dicke des Rasters
-        
+        // Hintergrund einfärben
+        context.fillStyle = backgroundColor;
+        context.fillRect(0, 0, canvas.width, canvas.height);
 
+        // Dunklere Farbe für das Raster
+        context.strokeStyle = '#2B2B2B'; // Setze die Farbe des Rasters etwas dunkler
+        context.lineWidth = 1.5; // Setze die Dicke des Rasters
+        
         for (let x = 0; x <= canvas.width; x += pixelSize) {
             context.beginPath();
             context.moveTo(x, 0);
@@ -36,6 +42,7 @@ export function createGrid(canvas: HTMLCanvasElement, size: number): void {
       drawGrid();
   });
 }
+
 
 // Zeichne ein Pixel auf das Canvas
 export function drawPixel(canvas: HTMLCanvasElement, x: number, y: number, color: string): void {
