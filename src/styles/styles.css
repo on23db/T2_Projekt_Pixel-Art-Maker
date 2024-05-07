@@ -108,7 +108,7 @@ Button.pen {
     height: 50px;
 }
 
-.container {
+canvas {
     height: 600px;
     width: 600px;
     background-color: #2B2B2B; 
@@ -118,10 +118,6 @@ Button.pen {
     grid-template-rows: repeat(var(--size), 1fr);
     gap: 1.5px;
     padding: 20px;
-}
- /*CSS für die Pixel - deklariert in dom-utils*/
-.pixel{
-    background-color: #1A1A1A;
 }
 
 footer {

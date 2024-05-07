@@ -1,30 +1,51 @@
-//Zeigt die Pixel auf dem Bildschirm an
-export function PixelGrid(container: HTMLElement, size: number): void {
-    container.style.setProperty('--size', size.toString());
-    for (let i = 0; i < size * size; i++) {
-      const div = document.createElement('div');
-      div.classList.add('pixel');
+// Erstelle das Raster im Canvas
+export function createGrid(canvas: HTMLCanvasElement, size: number): void {
+  const context = canvas.getContext('2d');
+  const pixelSize = 20; // Größe jedes Pixels im Raster
   
-      container.appendChild(div);
-    }
-  }
 
-//Zeichnet auf die Pixel
-export function Drawing(container: HTMLElement, color: HTMLInputElement, drawState: {draw: boolean}): void {
-    container.addEventListener('mouseover', (event) => {
-      if (drawState.draw) {
-        const target = event.target as HTMLElement;
-        if (target && target.classList.contains('pixel')) {
-          target.style.backgroundColor = color.value;
+  // Funktion zum Zeichnen des Rasters
+  function drawGrid() {
+      if (context) {
+        context.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+        context.strokeStyle = '#2B2B2B'; // Setze die Farbe des Rasters
+        context.lineWidth = 1; // Setze die Dicke des Rasters
+        
+
+        for (let x = 0; x <= canvas.width; x += pixelSize) {
+            context.beginPath();
+            context.moveTo(x, 0);
+            context.lineTo(x, canvas.height);
+            context.stroke();
+        }
+        for (let y = 0; y <= canvas.height; y += pixelSize) {
+            context.beginPath();
+            context.moveTo(0, y);
+            context.lineTo(canvas.width, y);
+            context.stroke();
         }
       }
-    });
-  
-    container.addEventListener('mousedown', () => {
-      drawState.draw = true;
-    });
-  
-    window.addEventListener('mouseup', () => {
-      drawState.draw = false;
-    });
   }
+
+  // Initialisierung des Rasters
+  drawGrid();
+
+  // Event-Listener für Änderungen der Größe
+  canvas.addEventListener('change', () => {
+      size = parseInt(size.toString());
+      drawGrid();
+  });
+}
+
+// Zeichne ein Pixel auf das Canvas
+export function drawPixel(canvas: HTMLCanvasElement, x: number, y: number, color: string): void {
+  const context = canvas.getContext('2d');
+  const pixelSize = 20; // Größe jedes Pixels im Raster
+
+  if (context) {
+    context.fillStyle = color;
+    context.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
+  }
+
+  
+}

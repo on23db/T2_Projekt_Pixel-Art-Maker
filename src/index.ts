@@ -1,27 +1,33 @@
 // CSS IMPORT IN TS NUR ÜBER VITE MÖGLICH
 import './styles/styles.css';
 
-
-//THIS IS THE ENTRY FILE - WRITE YOUR MAIN LOGIC HERE
-
-// Importiert die Funktion PixelGrid aus der Datei dom-utils.ts
-import { PixelGrid } from './dom-utils';
+import { createGrid, drawPixel } from './dom-utils';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('.container') as HTMLElement;
-  const sizeEl = document.querySelector('.size') as HTMLInputElement;
-  const resetButton = document.querySelector('.button') as HTMLButtonElement;
+    const canvas = document.getElementById('canvas') as HTMLCanvasElement;
+    const sizeEl = document.querySelector('.size') as HTMLInputElement;
+    const resetButton = document.querySelector('.reset') as HTMLButtonElement;
 
-  let size = parseInt(sizeEl.value);
+    let size = parseInt(sizeEl.value);
 
-  PixelGrid(container, size);
-});
+    // Erstelle das Raster
+    createGrid(canvas, size);
 
-import { Drawing } from './dom-utils';
-  document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.container') as HTMLElement;
-    const color = document.querySelector('.color') as HTMLInputElement;
-    const drawState = { draw: false };
+    // Event-Listener für den Reset-Button
+    resetButton.addEventListener('click', () => {
+      const context = canvas.getContext('2d');
+      if (context) {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+      }
+    });
 
-  Drawing(container, color, drawState);
+    // Event-Listener zum Zeichnen auf das Canvas
+    canvas.addEventListener('mousemove', (event) => {
+      const x = Math.floor(event.offsetX / 20); // 20 = pixelSize
+      const y = Math.floor(event.offsetY / 20); // 20 = pixelSize
+      const context = canvas.getContext('2d');
+      if (context && event.buttons === 1) { // Left mouse button is pressed
+        drawPixel(canvas, x, y, 'black'); // Setze die Farbe des Pixels hier
+      }
+    });
 });
