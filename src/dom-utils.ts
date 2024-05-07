@@ -43,7 +43,6 @@ export function createGrid(canvas: HTMLCanvasElement, size: number): void {
   });
 }
 
-
 // Zeichne ein Pixel auf das Canvas
 export function drawPixel(canvas: HTMLCanvasElement, x: number, y: number, color: string): void {
   const context = canvas.getContext('2d');
@@ -53,7 +52,6 @@ export function drawPixel(canvas: HTMLCanvasElement, x: number, y: number, color
     context.fillStyle = color;
     context.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
   }
-
 }
 
 // Funktion zum Zurücksetzen des Canvas, inklusive des Rasters
