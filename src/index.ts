@@ -1,7 +1,7 @@
 // CSS IMPORT IN TS NUR ÜBER VITE MÖGLICH
 import './styles/styles.css';
 
-import { createGrid, drawPixel, resetCanvas } from './dom-utils';
+import {createGrid, drawPixel, resetCanvas } from './dom-utils';
 
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('canvas') as HTMLCanvasElement;
@@ -29,4 +29,4 @@ document.addEventListener('DOMContentLoaded', () => {
         drawPixel(canvas, x, y, 'black'); // Setze die Farbe des Pixels hier
       }
     });
-});
+  });

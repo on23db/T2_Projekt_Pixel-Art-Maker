@@ -15,8 +15,8 @@ export function createGrid(canvas: HTMLCanvasElement, size: number): void {
         context.fillRect(0, 0, canvas.width, canvas.height);
 
         // Dunklere Farbe für das Raster
-        context.strokeStyle = '#2B2B2B'; // Setze die Farbe des Rasters etwas dunkler
-        context.lineWidth = 1.5; // Setze die Dicke des Rasters
+        context.strokeStyle = '#2B2B2B'; // Setzt die Farbe des Rasters etwas dunkler
+        context.lineWidth = 2; // Dicke der Raster Linien
         
         for (let x = 0; x <= canvas.width; x += pixelSize) {
             context.beginPath();
@@ -54,7 +54,6 @@ export function drawPixel(canvas: HTMLCanvasElement, x: number, y: number, color
     context.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
   }
 
-  
 }
 
 // Funktion zum Zurücksetzen des Canvas, inklusive des Rasters
@@ -68,4 +67,3 @@ export function resetCanvas(canvas: HTMLCanvasElement, size: number): void {
     createGrid(canvas, size);
   }
 }
-
