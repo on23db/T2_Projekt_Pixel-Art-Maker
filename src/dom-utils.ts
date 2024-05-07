@@ -56,3 +56,16 @@ export function drawPixel(canvas: HTMLCanvasElement, x: number, y: number, color
 
   
 }
+
+// Funktion zum Zurücksetzen des Canvas, inklusive des Rasters
+export function resetCanvas(canvas: HTMLCanvasElement, size: number): void {
+  const context = canvas.getContext('2d');
+  
+  if (context) {
+    // Lösche den gesamten Inhalt des Canvas
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    // Erstelle das Raster erneut
+    createGrid(canvas, size);
+  }
+}
+

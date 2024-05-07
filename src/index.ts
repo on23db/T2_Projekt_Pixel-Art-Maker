@@ -1,7 +1,7 @@
 // CSS IMPORT IN TS NUR ÜBER VITE MÖGLICH
 import './styles/styles.css';
 
-import { createGrid, drawPixel } from './dom-utils';
+import { createGrid, drawPixel, resetCanvas } from './dom-utils';
 
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('canvas') as HTMLCanvasElement;
@@ -14,12 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
     createGrid(canvas, size);
 
     // Event-Listener für den Reset-Button
-    resetButton.addEventListener('click', () => {
-      const context = canvas.getContext('2d');
-      if (context) {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-      }
-    });
+    if (resetButton) {
+      resetButton.addEventListener('click', () => {
+        resetCanvas(canvas, size);
+      });
+    }
 
     // Event-Listener zum Zeichnen auf das Canvas
     canvas.addEventListener('mousemove', (event) => {
