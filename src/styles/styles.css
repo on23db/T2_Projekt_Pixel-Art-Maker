@@ -16,8 +16,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; 
-    min-height: 100vh; /* Mindesthöhe auf die volle Bildschirmhöhe setzen */
-    margin: 0; /* Rand entfernen */
+    min-height: 100vh; /* Mindesthöhe auf die volle Bildschirmhöhe setzen (Viewport Height) */
+    margin: 0;
 }
 
 h1 {

@@ -1,4 +1,4 @@
-// Erstelle das Raster im Canvas
+// Erstellt das Raster im Canvas
 export function createGrid(canvas: HTMLCanvasElement, size: number): void {
   const context = canvas.getContext('2d');
   const backgroundColor = '#1A1A1A'; // Hintergrundfarbe des Canvas
@@ -35,7 +35,7 @@ export function createGrid(canvas: HTMLCanvasElement, size: number): void {
   });
 }
 
-// Zeichne ein Pixel auf das Canvas
+// Zeichnet ein Pixel auf das Canvas
 export function drawPixel(canvas: HTMLCanvasElement, x: number, y: number, color: string, size: number): void {
   const context = canvas.getContext('2d');
   const pixelSize = canvas.width / size; // Größe jedes Pixels im Raster
@@ -68,7 +68,7 @@ export function erasePixel(canvas: HTMLCanvasElement, x: number, y: number, size
       context.fillStyle = '#1A1A1A'; // Hintergrundfarbe des Canvas
       context.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
       
-      // Zeichne die Gitterlinien für das gelöschte Pixel neu
+      // Zeichnet die Gitterlinien für das gelöschte Pixel neu
       context.strokeStyle = '#2B2B2B'; // Setzt die Farbe des Rasters etwas dunkler
       context.lineWidth = 2; // Dicke der Raster Linien
 
@@ -83,7 +83,7 @@ export function erasePixel(canvas: HTMLCanvasElement, x: number, y: number, size
   }
 }
 
-// Funktion zum Zurücksetzen des Canvas, inklusive des Rasters
+// Funktion zum Zurücksetzen des Canvas und des Rasters
 export function resetCanvas(canvas: HTMLCanvasElement, size: number): void {
   createGrid(canvas, size);
 }
