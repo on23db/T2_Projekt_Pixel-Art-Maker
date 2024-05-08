@@ -36,8 +36,8 @@ h1 {
 }
 
 .size {
-    width: 150px;
-    height: 25px;
+    width: 130px;
+    height: 30px;
     border: none;
     border-radius: 5px;
     text-align: center;
@@ -82,6 +82,29 @@ h1 {
     margin-bottom: 50px;
 }
 
+.resize-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #1a1a1a65;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.resize-container button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: filter 0.2s; /* Filter-Übergangseffekt */
+    background-color:#8EC2BC;
+    color: white;
+}
+
+p {
+    margin-bottom: 2px;
+    font-size: 16px;
+}
+
 img.Logo {
     margin-top: -25px;
     margin-bottom: 30px;
@@ -90,8 +113,8 @@ img.Logo {
 Button.reset {
     background-color: #D16767;
     color: #ffffff;
-    width: 150px;
-    margin-top: 80px;
+    width: 200px;
+    margin-top: 40px;
 }
 
 Button.erase {
@@ -113,10 +136,6 @@ canvas {
     width: 600px;
     background-color: #2B2B2B; 
     border-radius: 15px;
-    display: grid;
-    grid-template-columns: repeat(var(--size), 1fr);
-    grid-template-rows: repeat(var(--size), 1fr);
-    gap: 1.5px;
     padding: 20px;
 }
 
