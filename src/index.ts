@@ -26,8 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     canvas.addEventListener('mousemove', (event) => {
-        const x = Math.floor(event.offsetX / 20); // 20 = pixelSize
-        const y = Math.floor(event.offsetY / 20); // 20 = pixelSize
+        const rect = canvas.getBoundingClientRect(); // Rechteck des Canvas auf der Seite
+        const scaleX = canvas.width / rect.width; // Skalierungsfaktor für horizontale Koordinaten
+        const scaleY = canvas.height / rect.height; // Skalierungsfaktor für vertikale Koordinaten
+        const pixelSize = canvas.width / size; // Größe jedes Pixels im Raster
+        const x = Math.floor((event.clientX - rect.left) * scaleX / pixelSize); // Berechnung der horizontalen Position im Raster
+        const y = Math.floor((event.clientY - rect.top) * scaleY / pixelSize); // Berechnung der vertikalen Position im Raster
+    
+        // Restlicher Code bleibt unverändert
         if (event.buttons === 1) { // Linker Mausklick
             if (!isErasing) {
                 drawPixel(canvas, x, y, currentColor, size);
@@ -36,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
+    
     colorPicker.addEventListener('input', () => {
         currentColor = colorPicker.value;
     });
