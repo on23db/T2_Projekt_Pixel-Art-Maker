@@ -1,7 +1,7 @@
 // Erstelle das Raster im Canvas
 export function createGrid(canvas: HTMLCanvasElement, size: number): void {
   const context = canvas.getContext('2d');
-  const pixelSize = 20; // Größe jedes Pixels im Raster
+  let pixelSize = canvas.width / size; // Größe jedes Pixels im Raster
   
   // Dunklere Farbe für das Raster
   const backgroundColor = '#1A1A1A'; // Hintergrundfarbe des Canvas
@@ -39,14 +39,15 @@ export function createGrid(canvas: HTMLCanvasElement, size: number): void {
   // Event-Listener für Änderungen der Größe
   canvas.addEventListener('change', () => {
       size = parseInt(size.toString());
+      pixelSize = canvas.width / size; // Berechne die neue Pixelgröße
       drawGrid();
   });
 }
 
 // Zeichne ein Pixel auf das Canvas
-export function drawPixel(canvas: HTMLCanvasElement, x: number, y: number, color: string): void {
+export function drawPixel(canvas: HTMLCanvasElement, x: number, y: number, color: string, size: number): void {
   const context = canvas.getContext('2d');
-  const pixelSize = 20; // Größe jedes Pixels im Raster
+  const pixelSize = canvas.width / size; // Größe jedes Pixels im Raster
 
   if (context) {
     context.fillStyle = color;
