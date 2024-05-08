@@ -28,9 +28,9 @@ h1 {
     display: flex; 
     justify-content: space-around; 
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.346);
+    background-color: rgba(0, 0, 0, 0.411);
     width: 900px;
-    padding: 20px; /*Möglicherweise noch anpassen!*/
+    padding: 25px; /*Möglicherweise noch anpassen!*/
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(20, 20, 20, 0.5); /*Schatten hinzufügen*/
 }
@@ -73,7 +73,7 @@ h1 {
 }
 
 .color {
-    width: 100px;
+    width: 120px;
     margin-top: 20px;
 }
 

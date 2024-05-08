@@ -1,4 +1,4 @@
-// Erstelle das Raster im Canvas mit dunklerem Hintergrund und dunkleren Zwischenräumen
+// Erstelle das Raster im Canvas
 export function createGrid(canvas: HTMLCanvasElement, size: number): void {
   const context = canvas.getContext('2d');
   const pixelSize = 20; // Größe jedes Pixels im Raster

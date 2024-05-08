@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const x = Math.floor(event.offsetX / 20); // 20 = pixelSize
       const y = Math.floor(event.offsetY / 20); // 20 = pixelSize
       const context = canvas.getContext('2d');
-      if (context && event.buttons === 1) { // Left mouse button is pressed
-        drawPixel(canvas, x, y, currentColor); // Setze die Farbe des Pixels hier
+      if (context && event.buttons === 1) { // Linker Mausklick
+        drawPixel(canvas, x, y, currentColor); // Setzt die Farbe des Pixels
       }
     });
 
