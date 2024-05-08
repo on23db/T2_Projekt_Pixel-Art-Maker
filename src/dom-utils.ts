@@ -43,6 +43,19 @@ export function drawPixel(canvas: HTMLCanvasElement, x: number, y: number, color
   if (context) {
       context.fillStyle = color;
       context.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
+
+       // Zeichne die Gitterlinien für das gelöschte Pixel neu
+       context.strokeStyle = '#2B2B2B'; // Setzt die Farbe des Rasters etwas dunkler
+       context.lineWidth = 2; // Dicke der Raster Linien
+ 
+       context.beginPath();
+       context.moveTo(x * pixelSize, 0);
+       context.lineTo(x * pixelSize, canvas.height);
+       context.stroke();
+       context.beginPath();
+       context.moveTo(0, y * pixelSize);
+       context.lineTo(canvas.width, y * pixelSize);
+       context.stroke();
   }
 }
 
