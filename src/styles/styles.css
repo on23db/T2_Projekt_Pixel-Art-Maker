@@ -169,7 +169,8 @@ canvas {
     background-color: rgba(0, 0, 0, 0.411);
     box-shadow: 0 10px 20px rgba(20, 20, 20, 0.5);
     border-radius: 15px;
-    margin-top: 800px;
+    margin-top: 780px;
+    width: 950px;
 }
 
 .info ul {
@@ -178,10 +179,10 @@ canvas {
     flex-direction: row;
     justify-content: space-around; /* Liste auf die breite der Box verteilen */
     align-items: center;
-    bottom: 0;
-    width: 920px;
+    width: 880px;
     background-color: #2B2B2B;
     margin: 12px;
     border-radius: 15px;
     padding: 5px;
+    margin-left: 30px;
 }
